@@ -1,26 +1,3 @@
--- premake5.lua
-workspace "3DMpGame-Server"
-   architecture "x64"
-   configurations { "Debug", "Release", "Dist" }
-   startproject "3DMpGame-Server"
-
-   -- Workspace-wide defines
-   defines
-   {
-       "WL_HEADLESS"
-   }
-
-   -- Workspace-wide build options for MSVC
-   filter "system:windows"
-      buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
-
--- Directories
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
-WalnutNetworkingBinDir = "Walnut/Walnut-Modules/Walnut-Networking/vendor/GameNetworkingSockets/bin/%{cfg.system}/%{cfg.buildcfg}/"
-
-include "Walnut/Build-Walnut-Headless-External.lua"
-
-group "App"
-    include "3DMpGame-Common/Build-3DMpGame-Common-Headless.lua"
-    include "3DMpGame-Server/Build-3DMpGame-Server-Headless.lua"
-group ""
+version https://git-lfs.github.com/spec/v1
+oid sha256:73331d7a5d478162f218fccbb71568111829f3a4be730e6e0fdfdf01ad138b10
+size 803
